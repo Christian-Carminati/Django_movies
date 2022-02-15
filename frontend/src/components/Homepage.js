@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RoomJoinPage from "./RoomJoinPage";
-import CreateRoomPage from "./CreateRoomPage";
+import CreateMoviePage from "./CreateMoviePage";
 import {
     BrowserRouter as Router,
     Routes,
@@ -19,7 +19,7 @@ import {
           <Routes>
           <Route path="/" element={<p>This is the homePage</p>}></Route>
           <Route path="/join" element={<RoomJoinPage/>}></Route>
-          <Route path="/create" element={<CreateRoomPage/>}></Route>
+          <Route path="/create" element={<CreateMoviePage/>}></Route>
           </Routes>
       </Router>
     }
