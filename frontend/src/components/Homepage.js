@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import RoomJoinPage from "./RoomJoinPage";
 import CreateMoviePage from "./CreateMoviePage";
-import CreateRoomPage from "./CreateRoomPage";
+import Login from "./Login";
 import {
     BrowserRouter as Router,
     Routes,
@@ -19,7 +18,7 @@ import {
       return <Router>
           <Routes>
           <Route path="/" element={<p>This is the homePage</p>}></Route>
-          <Route path="/join" element={<RoomJoinPage/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/create" element={<CreateMoviePage/>}></Route>
           </Routes>
       </Router>

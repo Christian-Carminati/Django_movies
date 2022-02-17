@@ -3,6 +3,6 @@ from frontend.views import index
 
 urlpatterns = [
     path('',index),
-    path('join',index),
+    path('login',index),
     path('create',index),
 ]
