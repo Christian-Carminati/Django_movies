@@ -1,30 +1,40 @@
 import React, { Component} from "react";
-import { Button } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
-import { TextField } from "@material-ui/core";
-import { FormControl } from "@material-ui/core";
-import { FormHelperText } from "@material-ui/core";
-import { FormControlLabel } from "@material-ui/core";
+import { Button,Grid,Typography,TextField,FormControl,FormHelperText,FormControlLabel } from "@material-ui/core";
 import { Link } from "@material-ui/core";
 
 export default class CreateMoviePage extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            name: null,
+            movie_director:null,
+            release_date:null,
+            running_time:null,
+            genre: []
+          };
+        this.handleRoomButtonPressed = this.handleRoomButtonPressed.bind(this);
+        this.handleNameChange = this.handleNameChange.bind(this);
     }
+    handleNameChange(e) {
+        this.setState({
+          name: e.target.value,
+        });
+      }
+      
     handleRoomButtonPressed() 
     {
         const requestOptions = {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            votes_to_skip: this.state.votesToSkip,
-            guest_can_pause: this.state.guestCanPause,
+            name: this.state.name,
+            genre: this.state.genre
           }),
         };
         fetch("/api/movies/add", requestOptions)
           .then((response) => response.json())
           .then((data) => console.log(data));
+        //console.log(this.state);
     }
 
     render(){
@@ -37,27 +47,34 @@ export default class CreateMoviePage extends Component {
                 </Grid>
                 <Grid items xs={12} align="center">
                     <FormControl component="fieldset">
-                        <TextField required={true} id="standard-basic" label="Name" variant="standard" />
-                            <FormHelperText>
-                                <div>prova</div>
-                            </FormHelperText>
-                        <TextField required={true} id="adwdadwa" label="Movie Director" variant="standard" />
-                        <FormHelperText>
-                            <div align="center">Votes Required To Skip Song</div>
-                        </FormHelperText>
+                        <TextField 
+                        required={true} 
+                        id="Name" 
+                        label="Name" 
+                        variant="standard"
+                        onChange={this.handleNameChange}
+                         />
                     </FormControl>
                 </Grid>
-                <Grid item xs={12} align="center">
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <DatePicker
-                        label="Basic example"
-                        value={value}
-                        onChange={(newValue) => {
-                        setValue(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                    />
-                    </LocalizationProvider>
+                <Grid items xs={12} align="center">
+                    <FormControl component="fieldset">
+                        <TextField required={true} id="Movie_director" label="Movie director" variant="standard" />
+                    </FormControl>
+                </Grid>
+                <Grid items xs={12} align="center">
+                    <FormControl component="fieldset">
+                        <TextField required={true} id="Running_time" label="Running time" variant="standard" />
+                    </FormControl>
+                </Grid>
+                <Grid items xs={12} align="center">
+                    <FormControl component="fieldset">
+                        <TextField required={true} id="Release_date" label="Release date" variant="standard" />
+                    </FormControl>
+                </Grid>
+                <Grid items xs={12} align="center">
+                    <FormControl component="fieldset">
+                        <TextField required={true} id="Genre" label="Genre" variant="standard" />
+                    </FormControl>
                 </Grid>
                 <Grid item xs={12} align="center">
                     <Button
@@ -65,7 +82,7 @@ export default class CreateMoviePage extends Component {
                         variant="contained"
                         onClick={this.handleRoomButtonPressed}
                     >
-                        Create A Room
+                        Add a Movie
                     </Button>
                 </Grid>
                 <Grid item xs={12} align="center">
