@@ -90,18 +90,12 @@ REST_FRAMEWORK = {
         'drf_social_oauth2.authentication.SocialAuthentication',
     ),
 }
-AUTHENTICATION_BACKENDS = (
-   'drf_social_oauth2.backends.DjangoOAuth2',
-   'django.contrib.auth.backends.ModelBackend',
-)
 
 AUTHENTICATION_BACKENDS = (
     # Google OAuth2
     'social_core.backends.google.GoogleOAuth2',
-
     # drf-social-oauth2
     'drf_social_oauth2.backends.DjangoOAuth2',
-
     # Django
     'django.contrib.auth.backends.ModelBackend',
 )
