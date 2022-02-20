@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axiosInstance from '../../axios/login'
+import axiosInstance from '../../axios/login';
 import { useNavigate } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import google_Login from '../../axios/googleLogin';
