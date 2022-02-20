@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = os.environ.get("SECRET_KEY")
 SECRET_KEY = "s9olwl3rl-n&dd89#23@g!l@^(neysw=av(2^4d+1cpsilt@*q"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -25,7 +25,8 @@ DATABASES = { 'default' : dj_database_url.config()}
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000"
+    "http://localhost:8000",
+    "https://django-movies-db.herokuapp.com",
 ]
 
 # Application definition
