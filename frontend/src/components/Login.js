@@ -130,7 +130,7 @@ export default function SignIn() {
 						Sign In
 					</Button>
 					<GoogleLogin
-						clientId="320035418897-5ga32j004nn1r07uh2gnci5mepr88msb.apps.googleusercontent.com"
+						clientId="320035418897-vdkf595r1th1mhi8qouvd1g49i22lvhu.apps.googleusercontent.com"
 						buttonText="Login"
 						onSuccess={responseGoogle}
 						onFailure={responseGoogle}
