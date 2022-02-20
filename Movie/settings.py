@@ -10,10 +10,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
-
+# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "s9olwl3rl-n&dd89#23@g!l@^(neysw=av(2^4d+1cpsilt@*q"
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,8 +87,20 @@ WSGI_APPLICATION = 'Movie.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'Moviedatabase',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': 'localhost',
+        # 'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dfamk88ihvn7o0',
+        'USER': 'fitcuqlzvwgdpu',
+        'PASSWORD': '4ca88a2750661eb366807ea890510eee435da6dda9b0dac3b6f24bf16a68a405',
+        'HOST': 'ec2-99-81-177-233.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
     }
+    # x ="postgres://fitcuqlzvwgdpu:4ca88a2750661eb366807ea890510eee435da6dda9b0dac3b6f24bf16a68a405@ec2-99-81-177-233.eu-west-1.compute.amazonaws.com:5432/dfamk88ihvn7o0"
 }
 
 REST_FRAMEWORK = {
