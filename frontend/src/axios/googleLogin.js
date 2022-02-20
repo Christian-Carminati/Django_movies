@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-const googleLogin = (accesstoken) => {
+const google_Login = (accesstoken) => {
 	console.log(accesstoken);
 	axios
-		.post('http://localhost:8000/auth/convert-token', {
+		.post('https://django-movies-db.herokuapp.com/auth/convert-token', {
 			token: accesstoken,
 			backend: 'google-oauth2',
 			grant_type: 'convert_token',
@@ -17,4 +17,4 @@ const googleLogin = (accesstoken) => {
 		});
 };
 
-export default googleLogin;
+export default google_Login;

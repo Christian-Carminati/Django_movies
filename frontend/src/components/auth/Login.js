@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import axiosInstance from '../axios/login';
+import axiosInstance from '../../axios/login'
 import { useNavigate } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
-import googleLogin from '../axios/googleLogin';
+import google_Login from '../../axios/googleLogin';
 //MaterialUI
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -61,9 +61,9 @@ export default function SignIn() {
 				username: formData.username,
 				password: formData.password,
         		grant_type: 'password',
-				client_id: 'qCQMZd0KQCPogzU230Y7VPXMW0HlngKIChWk0PO7',
+				client_id: 'mESBdVfKGORpCCyWLEOqol5Lx3rvFYUp4nbcYMJM',
 				client_secret:
-					'UAwOEH87YTwg23OJQJJ6txcG4J0cMmkb4mCrVDInA2PMyT9e9VTSjmUBkLaDK5AxQrUmK8t7dtkw9NK0EJhVybm1J5hdWR7n7PajDyqUHO2rsCLQ7OsIEQtCdmcmMrqy',
+					'E21tnf0AnZ0zITx5WvITDGNE1Z43p5BcbfAVaTzj1EA3RBZ1L4uuUrmZBEUVfGa87u517GBZI9sUyzlNv7ueOFyRP6UQVfE7OYJAY3MdNBeLuZtQJ5yuvMuQCFXozeQO',
 			})
 			.then((res) => {
 				localStorage.setItem('access_token', res.data.access_token);
@@ -130,7 +130,7 @@ export default function SignIn() {
 						Sign In
 					</Button>
 					<GoogleLogin
-						clientId="320035418897-vdkf595r1th1mhi8qouvd1g49i22lvhu.apps.googleusercontent.com"
+						clientId="320035418897-q46s4tlfu0cd1rah0lp027p4s7b0f2nj.apps.googleusercontent.com"
 						buttonText="Login"
 						onSuccess={responseGoogle}
 						onFailure={responseGoogle}

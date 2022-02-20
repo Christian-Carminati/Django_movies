@@ -100,7 +100,6 @@ DATABASES = {
         'HOST': 'ec2-99-81-177-233.eu-west-1.compute.amazonaws.com',
         'PORT': 5432,
     }
-    # x ="postgres://fitcuqlzvwgdpu:4ca88a2750661eb366807ea890510eee435da6dda9b0dac3b6f24bf16a68a405@ec2-99-81-177-233.eu-west-1.compute.amazonaws.com:5432/dfamk88ihvn7o0"
 }
 
 REST_FRAMEWORK = {
