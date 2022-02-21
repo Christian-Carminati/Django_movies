@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CreateMoviePage from "./CreateMoviePage";
-import Login from "./auth/login";
+import Login from "./auth/google_login";
 import {
     BrowserRouter as Router,
     Routes,
