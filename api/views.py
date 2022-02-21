@@ -12,6 +12,14 @@ class GenreViewSet(generics.ListAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     
+class GenreDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    
+class CreateGenre(generics.CreateAPIView):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    
 class MoviesViewSet(generics.ListAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
