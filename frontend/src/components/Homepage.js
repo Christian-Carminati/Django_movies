@@ -17,7 +17,7 @@ import {
     render() {
       return <Router>
           <Routes>
-          <Route path="/" element={<p>This is the homePage change</p>}></Route>
+          <Route path="/" element={<p>This is the homePage</p>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/create" element={<CreateMoviePage/>}></Route>
           </Routes>
