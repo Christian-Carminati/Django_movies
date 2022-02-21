@@ -90,6 +90,7 @@ password: admin12345
 * **Return**: `get,update data or delete a genre`
 #
 ## LOGIN
+* **pagina di login**https://django-movies-db.herokuapp.com/login
 Il login è gestito attraverso la generazione di access-token e di un refresh token tramite il servizio auth di django
 
 * **URL** : `https://django-movies-db.herokuapp.com/auth/token`
