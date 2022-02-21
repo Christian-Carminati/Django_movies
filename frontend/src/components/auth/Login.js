@@ -13,6 +13,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import GoogleLogin from 'react-google-login';
+import googleLogin from '../../axios/googleLogin';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -75,6 +77,11 @@ export default function SignIn() {
 
 	const classes = useStyles();
 
+	async function responseGoogle (response) {
+        console.log(response);
+        await googleLogin(response.accessToken)
+        //await setTimeout(() => window.location.reload(), 1000)
+    }
 	return (
 		<Container component="main" maxWidth="xs">
 			<CssBaseline />
@@ -120,8 +127,15 @@ export default function SignIn() {
 						className={classes.submit}
 						onClick={handleSubmit}
 					>
-						Sign In
+					Sign In
 					</Button>
+					<GoogleLogin
+                    clientId="320035418897-q46s4tlfu0cd1rah0lp027p4s7b0f2nj.apps.googleusercontent.com"
+                    buttonText="Join with Google"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                	/>
 					<Grid container>
 						<Grid item xs>
 							<Link href="#" variant="body2">
